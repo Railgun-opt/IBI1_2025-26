@@ -1,4 +1,3 @@
-# --- Pseudocode ---
 # 1. Set the total population to 91.
 # 2. Initialize the starting number of infected students (e.g., 5).
 # 3. Set the daily growth rate (e.g., 0.40 for 40%).
@@ -9,6 +8,7 @@
 # 8. Add 1 to the day counter.
 # 9. Display the day number and the current number of infected students.
 # 10. Once the loop finishes, print the total number of days it took.
+
 total_population = 91
 infected = 5
 growth_rate = 0.40

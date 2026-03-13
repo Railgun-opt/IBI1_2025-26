@@ -11,12 +11,12 @@ from random import randint
 from math import ceil 
 # 💡 Note: ceil is imported here, but it is never actually used in the code below!
 
-total_rand = 0  # 记录随机数总和的变量，初始值为 0
-progress = 0    # 循环计数器，初始值为 0
+total_rand = 0  # Variable to track the sum of random numbers, initialized to 0
+progress = 0    # Loop counter, initialized to 0
 
-while progress <= 10:  # 当 progress 小于或等于 10 时持续循环（会运行 11 次：0到10）
-    progress += 1      # 每次循环将计数器加 1
-    n = randint(1, 10) # 随机抽取一个 1 到 10 之间的整数赋值给 n
-    total_rand += n    # 将抽到的随机数 n 加到总和 total_rand 中
+while progress <= 10:  # Loop while progress is less than or equal to 10 (runs 11 times: 0 to 10)
+    progress += 1      # Increment the counter by 1 in each iteration
+    n = randint(1, 10) # Generate a random integer between 1 and 10 and assign it to n
+    total_rand += n    # Add the random number n to the total_rand sum
 
-print(total_rand)      # 循环结束后，打印最终的总和
+print(total_rand)      # Print the final sum after the loop finishes

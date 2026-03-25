@@ -9,7 +9,7 @@ from random import randint
 # ceil takes the ceiling of a number, i.e. the next higher integer.
 # e.g. ceil(4.2)=5
 from math import ceil 
-# 💡 Note: ceil is imported here, but it is never actually used in the code below!
+# ceil is imported here, but it is never actually used in the code below
 
 total_rand = 0  # Variable to track the sum of random numbers, initialized to 0
 progress = 0    # Loop counter, initialized to 0

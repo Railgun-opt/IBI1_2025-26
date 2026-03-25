@@ -1,0 +1,9 @@
+Reflection on Practical 3
+
+In this practical, I learned the basics of Git and GitHub for version control. Before this session, I had no experience with version control systems, so the concepts of committing, branching, and merging were quite new to me.
+
+The most challenging part was dealing with merge conflicts. When I tried to merge my friend's branch into the master branch, I encountered a conflict and had to figure out how to resolve it manually. It was confusing at first, but I eventually understood that I needed to decide which version of the text to keep.
+
+I found creating the GitHub Pages website quite rewarding — it was satisfying to see a simple webpage go live just by pushing a Markdown file. I am still not entirely sure how Jekyll themes work behind the scenes, and I would like to learn more about customising the appearance of my site in the future.
+
+Overall, this practical gave me a solid foundation in version control, which I think will be very useful for managing my code throughout the rest of this course and beyond.

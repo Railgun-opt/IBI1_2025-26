@@ -1,4 +1,4 @@
 Hello, my name is Xu Mingjie.
-I like drinking tea and eating chocolate biscuits.
-I am enjoying teaching IBI1 in person again 
-I am happy that I can push my repo from Visual Studio Code to GitHub
+I am a Year 1 student studying Biomedical Sciences (BMS) at the Zhejiang University - University of Edinburgh (ZJE) Institute, Class of 2025.
+I enjoy programming, reading scientific papers, and playing badminton in my free time.
+I am looking forward to learning more about bioinformatics and data analysis throughout this course.

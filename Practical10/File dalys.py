@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 
 
 #   set working directory so Python can find the csv
-os.chdir("/Volumes/MOVESPEED/IBI/Week 10 Public health informatics")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, "dalys-rate-from-all-causes.csv")
 
 #   load the data  
-df = pd.read_csv("dalys-rate-from-all-causes.csv")
+df = pd.read_csv(csv_path)
 print(f"Loaded: {df.shape[0]} rows, {df.shape[1]} columns\n")
 
 #   quick look at what we've got  

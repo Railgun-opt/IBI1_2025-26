@@ -1,0 +1,44 @@
+﻿Reflection on Practical 9: Modelling Infections
+
+1. What was the goal of this practical?
+The goal was to build probabilistic SIR (Susceptible-Infected-Recovered) models
+to understand how infectious diseases spread through a population. We created
+three versions: a basic well-mixed model, one that adds vaccination, and a
+2D spatial model where infection only spreads between neighbours.
+
+2. What did I learn from doing this practical?
+
+- How stochastic (probabilistic) models differ from deterministic ones:
+  every run gives slightly different results because of randomness.
+- The role of beta (transmission rate) and gamma (recovery rate) in shaping
+  the epidemic curve.
+- Herd immunity: once enough people are vaccinated (around 70-80% in our
+  model), the disease can't sustain itself even though not everyone is immune.
+- Spatial structure matters: in the 2D grid model, disease spreads like a
+  wave from the initial outbreak point, which looks very different from
+  the well-mixed assumption.
+
+3. Which parts were straightforward, and which were tricky?
+
+Straightforward:
+- Setting up the basic SIR loop with np.random.choice for infections
+  and recoveries.
+- Plotting results with matplotlib.
+
+Tricky:
+- Getting the infection probability right: it's not just beta, but
+  beta * (I / N), because you also need the chance of meeting an infected
+  person.
+- The spatial model required careful handling of grid boundaries and making
+  sure we work on a copy of the array so new infections don't immediately
+  spread further within the same time step.
+- Choosing the right figure size and dpi so plots are readable.
+
+4. If I had more time, what would I improve?
+
+- Add error bars or run multiple simulations to show average behaviour
+  (since each run is stochastic).
+- In the spatial model, save key frames to files instead of popping up
+  100 separate windows.
+- Experiment more with different beta/gamma values to see how they affect
+  the herd immunity threshold.

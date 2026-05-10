@@ -1,0 +1,13 @@
+﻿Response to Formative Feedback (Practical 3–5)
+
+1. Commit messages
+   Feedback: some commit messages like "update code" were too vague and didn't describe what changed.
+   Fix: all new commits for Practical 6–10 use descriptive messages that say exactly which file was added or updated and why.
+
+2. Output precision (Week 5 heart rate script)
+   Feedback: the script printed the full list of heart rates instead of just the number of patients.
+   Fix: for every script in Practical 6–10, I double-checked that the output matches exactly what each task asks for — no more, no less. For example, Practical 10's dalys.py prints the specific country names and values requested, not raw DataFrames.
+
+3. File naming
+   Feedback: avoid spaces in script names.
+   Fix: all new scripts use underscores instead of spaces (e.g., protein_mass.py, nutrition_tracker.py, spatial_SIR.py). The old "File dalys.py" in Practical 10 has been renamed to "dalys.py".

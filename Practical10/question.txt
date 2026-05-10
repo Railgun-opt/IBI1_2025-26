@@ -1,0 +1,8 @@
+﻿Question: How has the relationship between DALYs in China and the UK changed over time? Are they becoming more similar or less similar?
+
+Line number where code starts: 85 (the section after task 4)
+
+Result discussion:
+The plot shows that both China and the UK have seen their DALYs decrease over the 1990–2019 period, but at very different rates. China started with a much higher DALYs rate (~42,000) and fell steadily to ~22,000. The UK started lower (~29,000) and declined more gradually to ~25,000.
+
+The absolute gap between the two countries shrank from about 13,000 in 1990 to roughly 3,000 in 2019. This means they have become significantly more similar over time — largely because China's rapid improvement has closed most of the gap. By 2019 the two countries' disease burdens are fairly close compared to where they started.

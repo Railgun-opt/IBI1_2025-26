@@ -7,7 +7,9 @@ import os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-filename = os.path.join(SCRIPT_DIR, "Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa")
+# the FASTA data file lives on the external drive, not in the repo
+DATA_DIR = "/Volumes/MOVESPEED/IBI/Week 7 Python III Working with Strings and Files"
+filename = os.path.join(DATA_DIR, "Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa")
 outfile = os.path.join(SCRIPT_DIR, "stop_genes.fa")
 STOP_CODONS = ('TAA', 'TAG', 'TGA')
 

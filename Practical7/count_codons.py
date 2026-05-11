@@ -11,7 +11,9 @@ import matplotlib.pyplot as plt
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-filename = os.path.join(SCRIPT_DIR, "Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa")
+# the FASTA data file lives on the external drive, not in the repo
+DATA_DIR = "/Volumes/MOVESPEED/IBI/Week 7 Python III Working with Strings and Files"
+filename = os.path.join(DATA_DIR, "Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa")
 count_file = os.path.join(SCRIPT_DIR, "codon_counts.txt")
 pie_file = os.path.join(SCRIPT_DIR, "codon_pie_chart.png")
 VALID_STOPS = ('TAA', 'TAG', 'TGA')
@@ -78,16 +80,30 @@ print(f"Counted {len(codon_counts)} unique codons.")
 print(f"Counts saved to {count_file}")
 
 # draw a pie chart of codon usage
-# there are 64 possible codons so the figure needs to be large enough
-# to keep the labels readable
+# with 64 codons, putting labels directly on each slice causes overlap,
+# so we leave the slices unlabelled and put a legend outside the chart instead
 labels = list(codon_counts.keys())
 sizes = list(codon_counts.values())
 
-plt.figure(figsize=(20, 20))
-plt.pie(sizes, labels=labels, autopct='%1.1f%%', textprops={'fontsize': 8})
-plt.title(f"Codon Usage for genes ending with {user_stop}\n"
-          f"(fraction of all in-frame codons, n={sum(sizes):,})",
-          fontsize=14)
+fig, ax = plt.subplots(figsize=(14, 10))
+wedges, texts, autotexts = ax.pie(
+    sizes,
+    autopct=lambda p: f'{p:.1f}%' if p > 1.5 else '',  # only label slices > 1.5%
+    textprops={'fontsize': 7},
+    startangle=90
+)
+ax.legend(
+    wedges, labels,
+    title="Codon",
+    loc="center left",
+    bbox_to_anchor=(1, 0, 0.5, 1),
+    fontsize=7
+)
+ax.set_title(
+    f"Codon Usage for genes ending with {user_stop}\n"
+    f"(in-frame codons, n={sum(sizes):,})",
+    fontsize=13
+)
 plt.savefig(pie_file, dpi=150, bbox_inches='tight')
 plt.close()
 

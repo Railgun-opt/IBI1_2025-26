@@ -24,6 +24,19 @@ population[outbreak[0], outbreak[1]] = 1
 beta = 0.3     # infection probability per neighbour contact
 gamma = 0.05   # recovery probability per time step
 
+# pseudocode for the time loop:
+# for each of 100 time steps:
+#   1. find all cells currently in state 1 (infected)
+#   2. if no infected cells remain, stop early
+#   3. for each infected cell:
+#        for each of its 8 neighbours (within grid bounds):
+#          if the neighbour is susceptible (state 0):
+#            infect it with probability beta -> write to new_population
+#   4. for each infected cell:
+#        recover it (set state to 2) with probability gamma -> write to new_population
+#   5. replace population with new_population
+#   6. save a heatmap image every 10 steps
+
 print(f"Outbreak starts at grid position ({outbreak[0]}, {outbreak[1]})")
 print("Running spatial SIR simulation...")
 
@@ -57,7 +70,7 @@ for t in range(100):
                     if 0 <= xNeighbour < 100 and 0 <= yNeighbour < 100:
                         # only infect people who are still susceptible
                         if population[xNeighbour, yNeighbour] == 0:
-                            population[xNeighbour, yNeighbour] = np.random.choice(
+                            new_population[xNeighbour, yNeighbour] = np.random.choice(
                                 range(2), p=[1 - beta, beta]
                             )
 

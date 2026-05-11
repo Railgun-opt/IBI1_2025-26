@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 # 1. create a dictionary with 5 genes and expression values
@@ -19,7 +21,9 @@ plt.bar(Genes.keys(), Genes.values())
 plt.xlabel("Genes")
 plt.ylabel("Expression Levels")
 plt.title("Gene Expression Levels")
-plt.show()
+plt.savefig('gene_expression.png', dpi=150, bbox_inches='tight')
+plt.close()
+print("Bar chart saved to gene_expression.png")
 
 # check gene - change this to test different genes
 gene_of_interest = "TP53"

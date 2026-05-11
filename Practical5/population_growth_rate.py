@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 # population data
@@ -38,5 +40,6 @@ plt.ylabel('Population Change (%)')
 plt.title('Population Change (2020-2024)')
 plt.axhline(y=0, color='black', linewidth=0.5)
 plt.tight_layout()
-plt.savefig('population_change.png')
-plt.show()
+plt.savefig('population_change.png', dpi=150, bbox_inches='tight')
+plt.close()
+print("Bar chart saved to population_change.png")

@@ -5,6 +5,8 @@
 # regions, write the counts to a file, and plot a bar chart.
 
 import os
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -76,12 +78,16 @@ print(f"Counted {len(codon_counts)} unique codons.")
 print(f"Counts saved to {count_file}")
 
 # draw a pie chart of codon usage
+# there are 64 possible codons so the figure needs to be large enough
+# to keep the labels readable
 labels = list(codon_counts.keys())
 sizes = list(codon_counts.values())
 
-plt.figure(figsize=(10, 10))
-plt.pie(sizes, labels=labels, autopct='%1.1f%%')
-plt.title(f"Codon Usage (genes ending with {user_stop})")
+plt.figure(figsize=(20, 20))
+plt.pie(sizes, labels=labels, autopct='%1.1f%%', textprops={'fontsize': 8})
+plt.title(f"Codon Usage for genes ending with {user_stop}\n"
+          f"(fraction of all in-frame codons, n={sum(sizes):,})",
+          fontsize=14)
 plt.savefig(pie_file, dpi=150, bbox_inches='tight')
 plt.close()
 

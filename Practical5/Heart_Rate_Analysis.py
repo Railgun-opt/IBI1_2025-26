@@ -1,11 +1,14 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 # the dataset
 heart_rates = [72, 60, 126, 85, 90, 59, 76, 131, 88, 121, 64]
 average_heart_rate = sum(heart_rates) / len(heart_rates)
 
-print("Heart Rates:", heart_rates)
-print(f"Average Heart Rate: {average_heart_rate:.2f} bpm")
+# print the number of patients and mean heart rate (as required by the guide)
+print(f"There are {len(heart_rates)} patients in the dataset.")
+print(f"Mean heart rate: {average_heart_rate:.2f} bpm")
 
 # classify into groups
 high_group = []
@@ -41,4 +44,6 @@ print(f"The category with the most heart rates is: {max_group} with {max_group_n
 plt.figure(figsize=(8, 8))
 plt.pie(category.values(), labels=category.keys(), autopct='%1.1f%%', explode=(0.05, 0.05, 0.05))
 plt.title("Distribution of Heart Rate Categories")
-plt.show()
+plt.savefig('heart_rate_categories.png', dpi=150, bbox_inches='tight')
+plt.close()
+print("Pie chart saved to heart_rate_categories.png")

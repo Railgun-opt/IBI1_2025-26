@@ -32,7 +32,7 @@ print(dalys_data.describe())
 
 # ---- task 1: show the third and fourth columns (Year, DALYs) for the first 10 rows ----
 # The first 10 rows of data are all Afghanistan entries (one per year from 1990–1999).
-# Across these first 10 years, 1994 reported the maximum DALYs value for Afghanistan.
+# Across these first 10 years, 1998 reported the maximum DALYs value for Afghanistan.
 print("\n--- Year and DALYs for first 10 rows ---")
 print(dalys_data.iloc[0:10, [2, 3]])
 
